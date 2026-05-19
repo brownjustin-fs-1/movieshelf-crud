@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #10131a;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background: #1c2330;
+}
+
+.nav a {
+  color: #ffb347;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  color: #ffb347;
+  font-size: 3rem;
+}
+
+.card {
+  background: #1c2330;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+input {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background: #ffb347;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.movie-card {
+  background: #242c3a;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.delete {
+  background: #ff6961;
+}
