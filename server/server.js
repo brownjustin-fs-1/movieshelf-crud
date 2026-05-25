@@ -8,7 +8,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://movieshelf-crud.vercel.app"
+  "http://localhost:8081",
+  "https://movieshelf-crud.vercel.app",
 ];
 
 app.use((req, res, next) => {
@@ -18,7 +19,10 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", origin);
   }
 
-  res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, DELETE, OPTIONS",
+  );
   res.header("Access-Control-Allow-Headers", "Content-Type");
 
   if (req.method === "OPTIONS") {
@@ -34,7 +38,7 @@ const movieSchema = new mongoose.Schema({
   title: { type: String, required: true },
   genre: { type: String, required: true },
   rating: { type: Number, required: true },
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now },
 });
 
 const Movie = mongoose.model("Movie", movieSchema);
@@ -67,7 +71,7 @@ app.patch("/api/movies/:id", async (req, res) => {
     const updatedMovie = await Movie.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true }
+      { new: true },
     );
 
     res.json(updatedMovie);
